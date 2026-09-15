@@ -301,17 +301,14 @@ function StoryDetail() {
                 opacity: 0,
                 y: 20,
               }}
-              whileInView={{
+              animate={{
                 opacity: 1,
                 y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
               }}
               transition={{
                 duration: 0.7,
                 ease: "easeOut",
+                delay: index * 0.05,
               }}
             >
               {paragraph}
@@ -478,6 +475,7 @@ function StoryDetail() {
       >
         <Link to="/stories">
           <span>30 LITTLE WORLDS</span>
+
           <small>
             Return to the collection
           </small>
