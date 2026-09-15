@@ -293,27 +293,12 @@ function StoryDetail() {
       >
 
         {story.content
-          .split("\n\n")
-          .map((paragraph, index) => (
-            <motion.p
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: "easeOut",
-                delay: index * 0.05,
-              }}
-            >
-              {paragraph}
-            </motion.p>
-          ))}
+  .split("\n\n")
+  .map((paragraph, index) => (
+    <p key={index}>
+      {paragraph}
+    </p>
+  ))}
 
       </motion.div>
 
