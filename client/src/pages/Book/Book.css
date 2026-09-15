@@ -1,0 +1,687 @@
+/* =========================================
+   BOOK PAGE
+========================================= */
+
+.book-page {
+  min-height: 100vh;
+  padding-bottom: 120px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.book-hero {
+  min-height: 78vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 150px 20px 100px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(201, 169, 110, 0.1),
+      transparent 36%
+    );
+}
+
+.book-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 169, 110, 0.055),
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  animation: bookHeroGlow 9s ease-in-out infinite;
+}
+
+@keyframes bookHeroGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+.book-eyebrow {
+  position: relative;
+  z-index: 1;
+
+  color: var(--color-accent);
+
+  font-size: 10px;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+}
+
+.book-hero h1 {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 25px;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    70px,
+    11vw,
+    145px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.055em;
+}
+
+.book-subtitle {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 40px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+
+  font-size: 19px;
+
+  font-style: italic;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   BOOK INTRODUCTION
+========================================= */
+
+.book-introduction {
+  width: min(
+    100% - 40px,
+    1100px
+  );
+
+  margin: 0 auto;
+
+  padding: 110px 0;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.book-introduction-inner {
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  gap: 80px;
+}
+
+.book-label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  color: var(--color-muted);
+
+  font-size: 9px;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.book-label span:first-child {
+  color: var(--color-accent);
+
+  font-family: var(--font-serif);
+
+  font-size: 20px;
+
+  letter-spacing: 0;
+}
+
+.book-copy {
+  max-width: 780px;
+}
+
+.book-copy h2 {
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    42px,
+    6vw,
+    72px
+  );
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+}
+
+.book-text {
+  max-width: 620px;
+
+  margin-top: 45px;
+}
+
+.book-text p {
+  margin-bottom: 25px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+
+  font-size: 18px;
+
+  line-height: 1.9;
+}
+
+.book-text p:last-child {
+  margin-bottom: 0;
+}
+
+.book-text strong {
+  color: var(--color-text);
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   BOOK EXPERIENCE
+========================================= */
+
+.book-experience {
+  padding: 150px 20px;
+
+  text-align: center;
+
+  background: var(--color-surface);
+}
+
+.book-experience-inner {
+  width: min(
+    100%,
+    850px
+  );
+
+  margin: 0 auto;
+}
+
+.book-quote-mark {
+  display: block;
+
+  color: var(--color-accent);
+
+  font-family: var(--font-serif);
+
+  font-size: 75px;
+
+  line-height: 0.6;
+}
+
+.book-experience h2 {
+  margin-top: 30px;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    32px,
+    5vw,
+    58px
+  );
+
+  font-weight: 400;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+}
+
+.book-symbol {
+  display: block;
+
+  margin-top: 35px;
+
+  color: var(--color-accent);
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   AUTHOR
+========================================= */
+
+.book-author {
+  width: min(
+    100% - 40px,
+    1100px
+  );
+
+  margin: 0 auto;
+
+  padding: 130px 0;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.book-author-inner {
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  gap: 80px;
+}
+
+.book-author-number {
+  color: var(--color-accent);
+
+  font-family: var(--font-serif);
+
+  font-size: 20px;
+}
+
+.book-author-content {
+  max-width: 780px;
+}
+
+.book-section-label {
+  color: var(--color-accent);
+
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+.book-author-content h2 {
+  margin-top: 18px;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    55px,
+    8vw,
+    95px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.045em;
+}
+
+.book-author-content > p:not(.book-section-label) {
+  margin-top: 30px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+
+  font-size: 18px;
+
+  font-style: italic;
+}
+
+
+/* Author link */
+
+.book-author-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 45px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  font-size: 10px;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.book-author-link span {
+  color: var(--color-accent);
+
+  font-size: 17px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.book-author-link:hover {
+  color: var(--color-accent);
+
+  border-color: var(--color-accent);
+}
+
+.book-author-link:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   EXPLORE STORIES
+========================================= */
+
+.book-explore {
+  padding: 140px 20px 100px;
+
+  text-align: center;
+}
+
+.book-explore > div {
+  width: min(
+    100%,
+    700px
+  );
+
+  margin: 0 auto;
+}
+
+.book-explore h2 {
+  margin-top: 20px;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(
+    45px,
+    7vw,
+    78px
+  );
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+}
+
+.book-explore-text {
+  margin-top: 25px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+
+  font-size: 17px;
+
+  font-style: italic;
+
+  line-height: 1.7;
+}
+
+
+/* Explore button */
+
+.book-explore-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 45px;
+
+  padding: 17px 24px;
+
+  border: 1px solid var(--color-border);
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.book-explore-button span:last-child {
+  color: var(--color-accent);
+
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.book-explore-button:hover {
+  background: var(--color-surface);
+
+  border-color: var(--color-accent);
+
+  transform: translateY(-3px);
+}
+
+.book-explore-button:hover span:last-child {
+  transform: translateX(6px);
+}
+
+
+/* =========================================
+   FOOTER NOTE
+========================================= */
+
+.book-footer-note {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+}
+
+.book-footer-note span {
+  color: var(--color-accent);
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .book-introduction-inner,
+  .book-author-inner {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .book-label {
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 15px;
+  }
+
+  .book-author-number {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .book-page {
+    padding-bottom: 80px;
+  }
+
+  .book-hero {
+    min-height: 65vh;
+
+    padding:
+      130px
+      20px
+      80px;
+  }
+
+  .book-hero::before {
+    width: 350px;
+    height: 350px;
+  }
+
+  .book-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.25em;
+  }
+
+  .book-hero h1 {
+    font-size: clamp(
+      62px,
+      18vw,
+      100px
+    );
+  }
+
+  .book-subtitle {
+    margin-top: 30px;
+
+    font-size: 16px;
+  }
+
+  .book-introduction {
+    padding: 75px 0;
+  }
+
+  .book-copy h2 {
+    font-size: 43px;
+  }
+
+  .book-text {
+    margin-top: 35px;
+  }
+
+  .book-text p {
+    font-size: 17px;
+
+    line-height: 1.8;
+  }
+
+  .book-experience {
+    padding: 100px 20px;
+  }
+
+  .book-experience h2 {
+    font-size: 30px;
+  }
+
+  .book-author {
+    padding: 90px 0;
+  }
+
+  .book-author-content h2 {
+    font-size: 58px;
+  }
+
+  .book-explore {
+    padding:
+      90px
+      20px
+      70px;
+  }
+
+  .book-explore h2 {
+    font-size: 48px;
+  }
+
+  .book-explore-text {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .book-hero h1 {
+    font-size: 58px;
+  }
+
+  .book-author-content h2 {
+    font-size: 52px;
+  }
+
+  .book-explore h2 {
+    font-size: 43px;
+  }
+
+  .book-explore-button {
+    padding:
+      15px
+      18px;
+  }
+}

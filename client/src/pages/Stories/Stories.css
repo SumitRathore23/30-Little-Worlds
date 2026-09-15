@@ -1,0 +1,535 @@
+/* =========================================
+   STORIES PAGE
+========================================= */
+
+.stories-page {
+  min-height: 100vh;
+  padding-bottom: 120px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.stories-hero {
+  min-height: 72vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 150px 20px 90px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(201, 169, 110, 0.11),
+      transparent 36%
+    );
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Very subtle cinematic glow */
+
+.stories-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 169, 110, 0.06),
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  animation: storiesHeroGlow 8s ease-in-out infinite;
+}
+
+@keyframes storiesHeroGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+
+/* Eyebrow */
+
+.stories-eyebrow {
+  position: relative;
+  z-index: 1;
+
+  color: var(--color-accent);
+
+  font-size: 10px;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+}
+
+
+/* Main title */
+
+.stories-hero h1 {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 25px;
+
+  font-family: var(--font-serif);
+
+  font-size: clamp(65px, 10vw, 130px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* Description */
+
+.stories-description {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 38px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+
+  font-size: 19px;
+
+  font-style: italic;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.stories-controls {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+
+  padding-top: 28px;
+  padding-bottom: 28px;
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  position: relative;
+}
+
+
+/* Theme filters */
+
+.theme-filter {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.theme-filter button {
+  border: 1px solid transparent;
+
+  background: transparent;
+
+  padding: 9px 13px;
+
+  color: var(--color-muted);
+
+  cursor: pointer;
+
+  font-family: var(--font-sans);
+
+  font-size: 10px;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.theme-filter button:hover {
+  color: var(--color-text);
+
+  background: var(--color-surface);
+
+  transform: translateY(-1px);
+}
+
+.theme-filter button.active {
+  color: var(--color-text);
+
+  background: var(--color-surface);
+
+  border-color: var(--color-border);
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.story-search {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.story-search::before {
+  content: "⌕";
+
+  position: absolute;
+
+  left: -20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--color-muted);
+
+  font-size: 15px;
+
+  pointer-events: none;
+}
+
+.story-search input {
+  width: 220px;
+
+  padding: 11px 0;
+
+  border: 0;
+
+  border-bottom: 1px solid var(--color-border);
+
+  outline: none;
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-family: var(--font-sans);
+
+  font-size: 12px;
+
+  transition:
+    width 0.4s ease,
+    border-color 0.3s ease;
+}
+
+.story-search input:focus {
+  width: 270px;
+
+  border-color: var(--color-accent);
+}
+
+.story-search input::placeholder {
+  color: var(--color-muted);
+}
+
+
+/* =========================================
+   STORIES GRID
+========================================= */
+
+.stories-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 50px;
+
+  row-gap: 70px;
+
+  padding-top: 75px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.stories-loading {
+  grid-column: 1 / -1;
+
+  min-height: 350px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+}
+
+.stories-loading span {
+  color: var(--color-accent);
+
+  font-size: 40px;
+}
+
+.stories-loading p {
+  font-size: 14px;
+
+  font-style: italic;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.no-stories {
+  grid-column: 1 / -1;
+
+  padding: 120px 20px;
+
+  text-align: center;
+}
+
+.no-stories h2 {
+  font-family: var(--font-serif);
+
+  font-size: clamp(36px, 5vw, 52px);
+
+  font-weight: 400;
+
+  letter-spacing: -0.02em;
+}
+
+.no-stories p {
+  margin-top: 14px;
+
+  color: var(--color-muted);
+
+  font-family: var(--font-serif);
+
+  font-size: 15px;
+
+  font-style: italic;
+}
+
+
+/* =========================================
+   STORY CARD SPACING
+========================================= */
+
+.stories-grid .story-card {
+  min-width: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .stories-hero {
+    min-height: 65vh;
+
+    padding-top: 140px;
+  }
+
+  .stories-controls {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .theme-filter {
+    justify-content: center;
+  }
+
+  .story-search {
+    width: min(100%, 400px);
+
+    margin: 10px auto 0;
+  }
+
+  .story-search::before {
+    left: -18px;
+  }
+
+  .story-search input {
+    width: 100%;
+  }
+
+  .story-search input:focus {
+    width: 100%;
+  }
+
+  .stories-grid {
+    column-gap: 30px;
+
+    row-gap: 55px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .stories-page {
+    padding-bottom: 80px;
+  }
+
+  .stories-hero {
+    min-height: 60vh;
+
+    padding:
+      130px
+      20px
+      70px;
+  }
+
+  .stories-hero::before {
+    width: 350px;
+    height: 350px;
+  }
+
+  .stories-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.25em;
+  }
+
+  .stories-hero h1 {
+    margin-top: 20px;
+
+    font-size: clamp(58px, 18vw, 85px);
+
+    line-height: 0.92;
+  }
+
+  .stories-description {
+    margin-top: 28px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+  }
+
+  .stories-controls {
+    padding-top: 22px;
+    padding-bottom: 22px;
+
+    gap: 22px;
+  }
+
+  .theme-filter {
+    justify-content: flex-start;
+
+    gap: 3px;
+  }
+
+  .theme-filter button {
+    padding: 8px 10px;
+
+    font-size: 9px;
+  }
+
+  .story-search {
+    width: 100%;
+
+    margin: 5px 0 0 18px;
+  }
+
+  .story-search input {
+    width: 100%;
+  }
+
+  .stories-grid {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+
+    row-gap: 50px;
+
+    padding-top: 50px;
+  }
+
+  .no-stories {
+    padding: 80px 20px;
+  }
+
+  .no-stories h2 {
+    font-size: 38px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .stories-hero {
+    min-height: 58vh;
+
+    padding-top: 120px;
+  }
+
+  .stories-hero h1 {
+    font-size: 56px;
+  }
+
+  .stories-description {
+    font-size: 15px;
+  }
+
+  .theme-filter button {
+    padding: 7px 8px;
+
+    font-size: 8px;
+  }
+}
