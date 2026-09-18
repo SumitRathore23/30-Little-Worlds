@@ -182,3 +182,12 @@
     border-right-color: var(--border);
   }
 }
+/* ================================
+   MOBILE STORY CONTENT FIX
+================================ */
+
+.story-content p {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
